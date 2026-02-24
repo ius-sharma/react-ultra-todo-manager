@@ -67,7 +67,6 @@ src/
 ## 🚀 Future Improvements
 
 - Edit task functionality
-- Dark/Light theme toggle
 - LocalStorage persistence
 - Drag & drop reordering
 
