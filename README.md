@@ -41,12 +41,19 @@ This project demonstrates clean component structure, state management, validatio
 
 ## 📂 Project Structure
 src/
+
 ├── App.jsx
+
 ├── TodoForm.jsx
+
 ├── TodoList.jsx
+
 ├── TodoItem.jsx
+
 ├── ProgressBar.jsx
+
 └── index.css
+
 
 
 ---
