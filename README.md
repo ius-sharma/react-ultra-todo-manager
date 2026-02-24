@@ -64,12 +64,6 @@ src/
 
 ---
 
-## 📸 Preview
-
-(Add screenshot here)
-
----
-
 ## 🚀 Future Improvements
 
 - Edit task functionality
