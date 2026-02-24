@@ -1,16 +1,78 @@
-# React + Vite
+# 🚀 React Ultra Todo Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, modular Todo Manager built using React.  
+This project demonstrates clean component structure, state management, validation, progress tracking, and premium UI styling.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- ✅ Add and delete tasks
+- ☑️ Mark tasks as completed
+- 📊 Dynamic progress bar (real-time update)
+- 🔐 Form validation (empty & minimum length check)
+- 🧱 Modular component structure
+- 🎨 Modern glassmorphism UI design
+- ⚡ Smooth animations & transitions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React (Vite)
+- JavaScript (ES6+)
+- CSS3 (Glassmorphism + Modern UI)
+- Git & GitHub Pages
+
+---
+
+## 🧠 Concepts Practiced
+
+- useState Hook
+- Props & Component Communication
+- Array map & filter
+- Derived state (Progress Calculation)
+- Conditional rendering
+- Controlled components
+- Form validation
+- Modular file structure
+
+---
+
+## 📂 Project Structure
+src/
+├── App.jsx
+├── TodoForm.jsx
+├── TodoList.jsx
+├── TodoItem.jsx
+├── ProgressBar.jsx
+└── index.css
+
+
+---
+
+## 🌍 Live Demo
+
+🔗 https://ius-sharma.github.io/react-ultra-todo-manager/
+
+---
+
+## 📸 Preview
+
+(Add screenshot here)
+
+---
+
+## 🚀 Future Improvements
+
+- Edit task functionality
+- Dark/Light theme toggle
+- LocalStorage persistence
+- Drag & drop reordering
+
+---
+
+## 👨‍💻 Author
+
+Ayush Sharma  
+B.Tech Computer Engineering | Gamer | ODDSOCEAN
