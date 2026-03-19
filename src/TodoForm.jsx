@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function TodoForm({ addTask }) {
   const [task, setTask] = useState("");
+  const [priority, setPriority] = useState("Medium");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
@@ -19,22 +20,34 @@ function TodoForm({ addTask }) {
       return;
     }
 
-    addTask(trimmedTask);
+    addTask(trimmedTask, priority);
     setTask("");
+    setPriority("Medium");
     setError("");
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="input-row">
-        <input
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          placeholder="Enter task"
-          className="placeholder"
-        />
-        <button type="submit">Add</button>
+      <form onSubmit={handleSubmit} className="form-wrapper">
+        <div className="input-row">
+          <input
+            type="text"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            placeholder="Enter task"
+            className="placeholder"
+          />
+          <select
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+            className="priority-select"
+          >
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <button type="submit">Add</button>
+        </div>
       </form>
 
       {error && <p className="error-text">{error}</p>}

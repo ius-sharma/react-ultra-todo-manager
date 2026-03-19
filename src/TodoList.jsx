@@ -1,15 +1,15 @@
 import TodoItem from "./TodoItem";
 
-function TodoList({ tasks, deleteTask, toggleComplete }) {
+function TodoList({ tasks, deleteTask, toggleComplete, editTask }) {
   return (
     <ul>
-      {tasks.map((task, index) => (
+      {tasks.map((task) => (
         <TodoItem
-          key={index}
+          key={task.id}
           task={task}
-          index={index}
           deleteTask={deleteTask}
           toggleComplete={toggleComplete}
+          editTask={editTask}
         />
       ))}
     </ul>

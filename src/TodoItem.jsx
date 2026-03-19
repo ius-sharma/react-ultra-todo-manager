@@ -1,21 +1,89 @@
-function TodoItem({ task, index, deleteTask, toggleComplete }) {
+import { useState } from "react";
+
+function TodoItem({ task, deleteTask, toggleComplete, editTask }) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedText, setEditedText] = useState(task.text);
+
+  const handleSaveEdit = () => {
+    editTask(task.id, editedText);
+    setIsEditing(false);
+  };
+
+  const handleCancelEdit = () => {
+    setEditedText(task.text);
+    setIsEditing(false);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSaveEdit();
+    } else if (e.key === "Escape") {
+      handleCancelEdit();
+    }
+  };
+
+  const getPriorityClass = () => {
+    switch (task.priority) {
+      case "High":
+        return "priority-high";
+      case "Low":
+        return "priority-low";
+      default:
+        return "priority-medium";
+    }
+  };
+
   return (
-    <li>
+    <li className={getPriorityClass()}>
       <input
         type="checkbox"
         checked={task.completed}
-        onChange={() => toggleComplete(index)}
+        onChange={() => toggleComplete(task.id)}
       />
 
-      <span
-        style={{
-          textDecoration: task.completed ? "line-through" : "none",
-        }}
-      >
-        {task.text}
-      </span>
+      <div className="task-content">
+        {isEditing ? (
+          <input
+            type="text"
+            value={editedText}
+            onChange={(e) => setEditedText(e.target.value)}
+            onKeyDown={handleKeyDown}
+            autoFocus
+            className="edit-input"
+          />
+        ) : (
+          <>
+            <span
+              style={{
+                textDecoration: task.completed ? "line-through" : "none",
+              }}
+            >
+              {task.text}
+            </span>
+            <span className={`priority-badge ${getPriorityClass()}`}>
+              {task.priority}
+            </span>
+          </>
+        )}
+      </div>
 
-      <button onClick={() => deleteTask(index)}>Delete</button>
+      {isEditing ? (
+        <>
+          <button onClick={handleSaveEdit} className="save-btn">
+            Save
+          </button>
+          <button onClick={handleCancelEdit} className="cancel-btn">
+            Cancel
+          </button>
+        </>
+      ) : (
+        <>
+          <button onClick={() => setIsEditing(true)} className="edit-btn">
+            Edit
+          </button>
+          <button onClick={() => deleteTask(task.id)}>Delete</button>
+        </>
+      )}
     </li>
   );
 }
