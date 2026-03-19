@@ -35,7 +35,6 @@ This project demonstrates clean component structure, state management, validatio
 - Conditional rendering
 - Controlled components
 - Form validation
-- Modular file structure
 
 ---
 
